@@ -11,7 +11,7 @@ public class JiaoYiDaoImpl implements JiaoYiDao {
 	private Common common;
 	
 	public JiaoYiDaoImpl() {
-		common=new Common("jdbc:mysql://localhost:3306/erp?serverTimezone=UTC", "admin", "123456");
+		common=new Common("jdbc:mysql://localhost:3306/jiandanerp?serverTimezone=UTC", "jiandan", "jiandan123456");
 	}
 
 	@Override
@@ -20,7 +20,8 @@ public class JiaoYiDaoImpl implements JiaoYiDao {
 		try {
 			ResultSet result=common.findAll("select * from jiaoyi");
 			while(result.next()) {
-				
+				JiaoYi jiaoyi=new JiaoYi();
+				jiaoyi.setRiqi(result.getDate("riqi"));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
