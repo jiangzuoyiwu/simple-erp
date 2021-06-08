@@ -1,5 +1,6 @@
 package cn.jiangzuo.gui;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -47,6 +48,9 @@ public class Login extends JFrame implements ActionListener {
 		denglu=new JButton("登录");
 		denglu.setSize(80, 40);
 		denglu.setLocation(400, 520);
+		denglu.setBackground(Color.GREEN);
+		Color myColor=new Color(0, 117, 234);
+		denglu.setForeground(myColor);
 		//使用容器盛放控件
 		rongqi=new JPanel();
 		rongqi.setLayout(null);
