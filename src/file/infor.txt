@@ -54,6 +54,47 @@ c，对于接口的实现
 
 动作代码编写
 
+2021年6月10日
+项目的整体结构和功能
+包的名称及作用
+com.jiangzuo.common存放对于数据库操作的公用类
+com.jiangzuo.dao存放对于数据表操作的接口
+com.jiangzuo.dao.impl存放对于数据表操作接口的实现
+com.jiangzuo.domain存放对于数据表存在映射关系的类(类名与表名相同
+，成员变量与列表项数据类型和名称均相同，类中有对成员变量的get/set
+方法)
+com.jiangzuo.enter存放主类
+com.jiangzuo.gui存放界面类，该类中设定界面的组件和布局，完成界面
+的各种交互动作和效果显示
+com.jiangzuo.service存放用户实现交互功能所需方法的接口描述
+com.jiangzuo.service.impl存放用户交互接口的实现类
+类之间执行的过程
+1，enter包内——>gui包内——>service.impl包内——>dao.impl包内——>
+common包内——>数据库
+2，domain包内的类（此种类叫Javabean）作为数据表的描述存在，
+每个实例化的对象代表一条数据记录
+3，注意事项
+a，在Javabean类的对象与数据表记录之间数据传递中数据类型的对接
+对应关系中较为麻烦的内容有日期类型，需要分清java.sql和java.util包中
+日期的不同表述和使用场景
+b，在dao包中的接口方法相对固定，增删改查是必备内容，其余内容按需设定
+c，在service包中的接口方法描述需要与用户实现功能对接，是实现动作的核心
+主要是逻辑运算
+d，在gui包中实现用户的数学运算和数据约束条件的验证
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
